@@ -12,23 +12,24 @@ class Buttons extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Container(
         padding: const EdgeInsets.all(20),
-        child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              Text('TextButton: '),
-              TextButtons(),
-              Text('OutlinedButton: '),
-              OutlinedButtons(),
-              Text('ElevatedButton: '),
-              ElevatedButtons(),
-              SizedBox(height: 30,),
-              Text(
-                '1. 怎么支持缩放的点击态\n'
-                '2. 怎么支持透明度改变的点击态\n'
-                '3. 怎么方便的处理 enabled 和 disabled 的状态\n'
-                '4. 怎么方便的处理 icon text'
-              )
-            ]),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Text('TextButton: ', style: Theme.of(context).textTheme.titleMedium),
+          const TextButtons(),
+          Text('OutlinedButton: ',
+              style: Theme.of(context).textTheme.titleMedium),
+          const OutlinedButtons(),
+          Text('ElevatedButton: ',
+              style: Theme.of(context).textTheme.titleMedium),
+          const ElevatedButtons(),
+          const SizedBox(
+            height: 30,
+          ),
+          const Text('1. 怎么支持缩放的点击态\n'
+              '2. 怎么支持透明度改变的点击态\n'
+              '3. 怎么方便的处理 enabled 和 disabled 的状态\n'
+              '4. 怎么方便的处理 icon text\n'
+              '5. 怎么支持渐变背景'),
+        ]),
       ),
     );
   }
@@ -122,18 +123,23 @@ class ElevatedButtons extends StatelessWidget {
           onPressed: () {},
           child: const Text('button'),
         ),
-        ElevatedButton(onPressed: () {}, child: const Text('阴影颜色'), style: ButtonStyle(
-          shadowColor: MaterialStateProperty.all(Colors.red)
-        ),),
-        ElevatedButton(onPressed: (){}, child: const Text('阴影大小'), style: ButtonStyle(
-          shadowColor: MaterialStateProperty.all(Colors.red),
-          elevation: MaterialStateProperty.resolveWith((states){
-            if (states.contains(MaterialState.pressed)) {
-              return 10;
-            }
-            return 6;
-          })
-        ))
+        ElevatedButton(
+          onPressed: () {},
+          child: const Text('阴影颜色'),
+          style:
+              ButtonStyle(shadowColor: MaterialStateProperty.all(Colors.red)),
+        ),
+        ElevatedButton(
+            onPressed: () {},
+            child: const Text('阴影大小'),
+            style: ButtonStyle(
+                shadowColor: MaterialStateProperty.all(Colors.red),
+                elevation: MaterialStateProperty.resolveWith((states) {
+                  if (states.contains(MaterialState.pressed)) {
+                    return 10;
+                  }
+                  return 6;
+                })))
       ],
     );
   }
