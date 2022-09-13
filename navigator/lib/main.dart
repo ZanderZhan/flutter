@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:navigator/page/screen1.dart';
+import 'package:navigator/page/screen2.dart';
+import 'package:navigator/page/screen3.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,6 +20,8 @@ class MyApp extends StatelessWidget {
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
       routes: {
         'screen1': (_) => const Screen1(),
+        'screen2': (_) => const Screen2(),
+        'screen3': (_) => const Screen3(),
       },
     );
   }

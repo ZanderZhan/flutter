@@ -16,8 +16,9 @@ class Delegate extends RouterDelegate<String> with PopNavigatorRouterDelegateMix
         pages.add(const MaterialPage(child: Screen2()));
       } else if (element == 'screen3') {
         pages.add(const MaterialPage(child: Screen3()));
+      } else {
+        pages.add(const MaterialPage(child: Screen1()));
       }
-      pages.add(const MaterialPage(child: Screen1()));
     }
     return pages;
   }
@@ -42,7 +43,7 @@ class Delegate extends RouterDelegate<String> with PopNavigatorRouterDelegateMix
 
 
   @override
-  String get currentConfiguration => paths.last;
+  String? get currentConfiguration => paths.isNotEmpty? paths.last : null;
 
   @override
   Future<void> setNewRoutePath(String configuration) async {

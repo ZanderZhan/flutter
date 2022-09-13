@@ -10,10 +10,14 @@ class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
-  State<StatefulWidget> createState() => _State();
+  State<StatefulWidget> createState() => AppState();
+
+  static AppState of(BuildContext context) {
+    return context.findRootAncestorStateOfType<AppState>()!;
+  }
 }
 
-class _State extends State<MyApp> {
+class AppState extends State<MyApp> {
   late final Delegate delegate;
   late final Parser parser;
 
