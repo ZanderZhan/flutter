@@ -5,6 +5,7 @@ import 'package:navigator/page/screen3.dart';
 
 class Delegate extends RouterDelegate<String> with PopNavigatorRouterDelegateMixin, ChangeNotifier {
 
+  // 保存所有的页面路径
   List<String> paths = [];
 
   final GlobalKey<NavigatorState> _key = GlobalKey<NavigatorState>();
@@ -32,6 +33,8 @@ class Delegate extends RouterDelegate<String> with PopNavigatorRouterDelegateMix
           return false;
         }
         paths.removeLast();
+        // notify 会触发 Router 的 rebuild。
+        // Router 的 rebuild 会调用当前的 build 方法返回新的 Navigator。
         notifyListeners();
         return true;
       },
@@ -41,12 +44,12 @@ class Delegate extends RouterDelegate<String> with PopNavigatorRouterDelegateMix
   @override
   GlobalKey<NavigatorState>? get navigatorKey => _key;
 
-
   @override
   String? get currentConfiguration => paths.isNotEmpty? paths.last : null;
 
   @override
   Future<void> setNewRoutePath(String configuration) async {
+    // 系统行为触发的，会调用到这里。
     paths.add(configuration);
   }
 
