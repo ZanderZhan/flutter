@@ -49,10 +49,12 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             TextButton(
               onPressed: () {
+                // 1. 指定 pageRoute
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (_) => const Screen1()),
                 );
-                Navigator.of(context).pushNamed('screen1');
+                // 2. 配置 name routes
+                // Navigator.of(context).pushNamed('screen1');
               },
               child: const Text('Screen1'),
             )
