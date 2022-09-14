@@ -48,13 +48,14 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             TextButton(
-                onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (_) => const Screen1()),
-                  );
-                  Navigator.of(context).pushNamed('screen1');
-                },
-                child: const Text('匿名路由'))
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const Screen1()),
+                );
+                Navigator.of(context).pushNamed('screen1');
+              },
+              child: const Text('Screen1'),
+            )
           ],
         ),
       ),
