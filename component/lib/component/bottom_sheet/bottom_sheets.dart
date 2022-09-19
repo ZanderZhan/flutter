@@ -94,12 +94,12 @@ class _State extends State<BottomSheets> with TickerProviderStateMixin {
                             child: DraggableScrollableSheet(
                                 expand: false,
                                 snap: true,
-                                snapSizes: [0.5, 1.0],
+                                snapSizes: const [0.5, 1.0],
                                 builder: (_, controller) {
                                   return NotificationListener<
                                       DraggableScrollableNotification>(
                                     onNotification: (notification) {
-                                      print(
+                                      debugPrint(
                                           'zander, ${notification.extent  }');
                                       setState(() {
                                         _inTop = notification.extent == 1.0;
@@ -112,7 +112,7 @@ class _State extends State<BottomSheets> with TickerProviderStateMixin {
                                           mainAxisSize: MainAxisSize.min,
                                           children: [
                                             if (_inTop) AppBar(),
-                                            Text('content')
+                                            const Text('content')
                                           ],
                                         )),
                                   );

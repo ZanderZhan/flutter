@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class Dialogs extends StatefulWidget {
   const Dialogs({Key? key}) : super(key: key);
@@ -22,7 +21,7 @@ class _DialogsState extends State<Dialogs> {
                   context: context,
                   pageBuilder: (context, animation, secondaryAnimation) {
                     return SimpleDialog(
-                      title: Text('simple dialog'),
+                      title: const Text('simple dialog'),
                       children: <Widget>[
                         SimpleDialogOption(
                           onPressed: () {
@@ -48,7 +47,7 @@ class _DialogsState extends State<Dialogs> {
                   context: context,
                   builder: (_) {
                     return AlertDialog(
-                      title: Text('Alert'),
+                      title: const Text('Alert'),
                       actions: [
                         TextButton(onPressed: () {}, child: const Text('NO')),
                         TextButton(onPressed: () {}, child: const Text('YES')),
@@ -64,7 +63,7 @@ class _DialogsState extends State<Dialogs> {
                   context: context,
                   builder: (_) {
                     return CupertinoAlertDialog(
-                      title: Text('Alert'),
+                      title: const Text('Alert'),
                       actions: [
                         CupertinoDialogAction(
                           onPressed: () {

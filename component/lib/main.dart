@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
         if (settings.name == 'dialogs') {
           return CupertinoPageRoute(builder: (context) => const Dialogs());
         }
+        return null;
       },
       navigatorObservers: [CustomObserver()],
     );
@@ -92,16 +93,16 @@ class _MyHomePageState extends State<MyHomePage> {
 class CustomObserver extends NavigatorObserver {
   @override
   void didRemove(Route<dynamic> route, Route<dynamic>? previousRoute) {
-    print('remove: $route');
+    debugPrint('remove: $route');
   }
 
   @override
   void didPop(Route route, Route? previousRoute) {
-    print('pop: $route');
+    debugPrint('pop: $route');
   }
 
   @override
   void didPush(Route route, Route? previousRoute) {
-    print('push: $route');
+    debugPrint('push: $route');
   }
 }

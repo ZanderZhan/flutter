@@ -62,6 +62,7 @@ class TextButtons extends StatelessWidget {
                 if (states.contains(MaterialState.pressed)) {
                   return Colors.white;
                 }
+                return null;
               }),
               overlayColor: MaterialStateProperty.resolveWith(
                   (states) => Colors.deepOrange)),
