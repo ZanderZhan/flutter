@@ -23,5 +23,8 @@ class DatabaseInitializer {
     for (var callback in callbacks) {
       callback.call(database);
     }
+
+    // 清除
+    callbacks.clear();
   }
 }
